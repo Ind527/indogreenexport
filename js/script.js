@@ -147,6 +147,9 @@ function animateCounters() {
 
 // Contact form handling
 function initContactForm() {
+    // Initialize EmailJS
+    emailjs.init('VvPp2TK7CIDLm5QCt');
+    
     const contactForms = document.querySelectorAll('#contactForm');
     
     contactForms.forEach(form => {
@@ -168,43 +171,43 @@ function handleFormSubmission(form) {
     
     // Get form data
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
+    const templateParams = {
+        from_name: formData.get('name'),
+        from_email: formData.get('email'),
+        phone: formData.get('phone'),
+        company: formData.get('company'),
+        product: formData.get('product'),
+        message: formData.get('message'),
+        to_name: 'Green Leaf Export'
+    };
     
-    // Simulate form submission (replace with actual endpoint)
-    setTimeout(() => {
-        // Reset form
-        form.reset();
-        
-        // Reset button
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        submitBtn.classList.remove('loading');
-        
-        // Show success message
-        showNotification('Pesan berhasil dikirim! Kami akan segera menghubungi Anda.', 'success');
-        
-        // In a real implementation, you would send the data to your server:
-        // fetch('/api/contact', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(data)
-        // })
-        // .then(response => response.json())
-        // .then(result => {
-        //     if (result.success) {
-        //         showNotification('Pesan berhasil dikirim!', 'success');
-        //         form.reset();
-        //     } else {
-        //         showNotification('Gagal mengirim pesan. Silakan coba lagi.', 'error');
-        //     }
-        // })
-        // .catch(error => {
-        //     showNotification('Terjadi kesalahan. Silakan coba lagi.', 'error');
-        // });
-        
-    }, 2000);
+    // Send email using EmailJS
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            
+            // Reset form
+            form.reset();
+            
+            // Reset button
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('loading');
+            
+            // Show success message
+            showNotification('Pesan berhasil dikirim! Kami akan segera menghubungi Anda.', 'success');
+            
+        }, function(error) {
+            console.log('FAILED...', error);
+            
+            // Reset button
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('loading');
+            
+            // Show error message
+            showNotification('Gagal mengirim pesan. Silakan coba lagi.', 'error');
+        });
 }
 
 function showNotification(message, type = 'info') {
