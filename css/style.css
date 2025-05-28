@@ -499,9 +499,9 @@ section {
 }
 
 .vm-content {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 3rem;
-    grid-template-rows: 1fr 1fr;
 }
 
 .vm-item {
@@ -509,7 +509,7 @@ section {
     gap: 2rem;
     align-items: flex-start;
     min-height: 250px;
-    height: 100%;
+    height: auto;
 }
 
 .vm-item .vm-icon {
