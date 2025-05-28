@@ -182,7 +182,7 @@ function handleFormSubmission(form) {
     };
     
     // Send email using EmailJS
-    emailjs.send('service_ui5x9bs', 'template_xjrrgx6', templateParams)
+    emailjs.send('service_ui5x9bs', 'template_9vkv97e', templateParams)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             
