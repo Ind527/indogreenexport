@@ -501,13 +501,15 @@ section {
 .vm-content {
     display: grid;
     gap: 3rem;
+    grid-template-rows: 1fr 1fr;
 }
 
 .vm-item {
     display: flex;
     gap: 2rem;
     align-items: flex-start;
-    min-height: 200px;
+    min-height: 250px;
+    height: 100%;
 }
 
 .vm-item .vm-icon {
