@@ -1,0 +1,107 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main leaf shape -->
+  <defs>
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8BC34A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#388E3C;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="stemGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#689F38;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#558B2F;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Leaf shadow -->
+  <path d="M22 82 Q32 22 50 12 Q68 22 78 82 Q68 92 50 87 Q32 92 22 82 Z" 
+        fill="rgba(0,0,0,0.1)" 
+        transform="translate(2,2)"/>
+  
+  <!-- Main leaf body -->
+  <path d="M20 80 Q30 20 50 10 Q70 20 80 80 Q70 90 50 85 Q30 90 20 80 Z" 
+        fill="url(#leafGradient)" 
+        stroke="#388E3C" 
+        stroke-width="1"/>
+  
+  <!-- Central vein -->
+  <path d="M50 10 L50 85" 
+        stroke="url(#stemGradient)" 
+        stroke-width="3"/>
+  
+  <!-- Left side veins -->
+  <path d="M50 20 Q35 25 25 35" 
+        stroke="#2E7D32" 
+        stroke-width="1.5" 
+        fill="none" 
+        opacity="0.7"/>
+  <path d="M50 30 Q38 35 30 45" 
+        stroke="#2E7D32" 
+        stroke-width="1.2" 
+        fill="none" 
+        opacity="0.6"/>
+  <path d="M50 40 Q40 45 35 55" 
+        stroke="#2E7D32" 
+        stroke-width="1" 
+        fill="none" 
+        opacity="0.5"/>
+  <path d="M50 50 Q42 55 38 65" 
+        stroke="#2E7D32" 
+        stroke-width="1" 
+        fill="none" 
+        opacity="0.5"/>
+  <path d="M50 60 Q45 65 42 75" 
+        stroke="#2E7D32" 
+        stroke-width="1" 
+        fill="none" 
+        opacity="0.4"/>
+  
+  <!-- Right side veins -->
+  <path d="M50 20 Q65 25 75 35" 
+        stroke="#2E7D32" 
+        stroke-width="1.5" 
+        fill="none" 
+        opacity="0.7"/>
+  <path d="M50 30 Q62 35 70 45" 
+        stroke="#2E7D32" 
+        stroke-width="1.2" 
+        fill="none" 
+        opacity="0.6"/>
+  <path d="M50 40 Q60 45 65 55" 
+        stroke="#2E7D32" 
+        stroke-width="1" 
+        fill="none" 
+        opacity="0.5"/>
+  <path d="M50 50 Q58 55 62 65" 
+        stroke="#2E7D32" 
+        stroke-width="1" 
+        fill="none" 
+        opacity="0.5"/>
+  <path d="M50 60 Q55 65 58 75" 
+        stroke="#2E7D32" 
+        stroke-width="1" 
+        fill="none" 
+        opacity="0.4"/>
+  
+  <!-- Leaf texture highlights -->
+  <ellipse cx="40" cy="35" rx="3" ry="8" 
+           fill="rgba(255,255,255,0.3)" 
+           transform="rotate(-30 40 35)"/>
+  <ellipse cx="60" cy="45" rx="2" ry="6" 
+           fill="rgba(255,255,255,0.2)" 
+           transform="rotate(25 60 45)"/>
+  <ellipse cx="45" cy="60" rx="2" ry="5" 
+           fill="rgba(255,255,255,0.15)" 
+           transform="rotate(-15 45 60)"/>
+  
+  <!-- Leaf edge details -->
+  <path d="M20 80 Q22 78 24 80 Q26 82 28 80 Q30 78 32 80" 
+        stroke="#2E7D32" 
+        stroke-width="0.5" 
+        fill="none" 
+        opacity="0.6"/>
+  <path d="M68 80 Q70 78 72 80 Q74 82 76 80 Q78 78 80 80" 
+        stroke="#2E7D32" 
+        stroke-width="0.5" 
+        fill="none" 
+        opacity="0.6"/>
+</svg>

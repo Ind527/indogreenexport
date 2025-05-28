@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri - Ekspor Daun Pisang Premium</title>
+    <meta name="description" content="Galeri foto fasilitas produksi, kebun, dan produk daun pisang berkualitas premium">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="https://via.placeholder.com/120x60/4CAF50/ffffff?text=LOGO" alt="Company Logo" id="company-logo">
+                <span class="company-name">Green Leaf Export</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Produk Kami</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link active">Galeri</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">Tentang Kami</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="floating-leaf leaf-1"></div>
+        <div class="floating-leaf leaf-2"></div>
+        <div class="container">
+            <h1>Galeri Kami</h1>
+            <p>Lihat fasilitas produksi dan kualitas produk daun pisang kami</p>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="gallery-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="warehouse">Gudang</button>
+                <button class="filter-btn" data-filter="plantation">Kebun</button>
+                <button class="filter-btn" data-filter="products">Produk</button>
+                <button class="filter-btn" data-filter="processing">Proses</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Warehouse Images -->
+                <div class="gallery-item" data-category="warehouse">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/ffffff?text=Gudang+Utama" alt="Gudang Utama">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Gudang Penyimpanan Utama</h4>
+                            <p>Fasilitas penyimpanan modern dengan kontrol suhu</p>
+                            <button class="view-full" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="warehouse">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/ffffff?text=Area+Packaging" alt="Area Packaging">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Area Packaging</h4>
+                            <p>Ruang pengemasan dengan standar higiene tinggi</p>
+                            <button class="view-full" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="warehouse">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/ffffff?text=Cold+Storage" alt="Cold Storage">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Cold Storage</h4>
+                            <p>Penyimpanan berpendingin untuk menjaga kesegaran</p>
+                            <button class="view-full" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plantation Images -->
+                <div class="gallery-item" data-category="plantation">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/ffffff?text=Kebun+Pisang+1" alt="Kebun Pisang 1">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Kebun Pisang Organik</h4>
+                            <p>Perkebunan pisang dengan metode organik</p>
+                            <button class="view-full" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="plantation">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/ffffff?text=Kebun+Pisang+2" alt="Kebun Pisang 2">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Area Penanaman</h4>
+                            <p>Lahan subur dengan sistem irigasi modern</p>
+                            <button class="view-full" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="plantation">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/ffffff?text=Petani+Lokal" alt="Petani Lokal">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Petani Lokal</h4>
+                            <p>Kerjasama dengan petani lokal berpengalaman</p>
+                            <button class="view-full" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Images -->
+                <div class="gallery-item" data-category="products">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/ffffff?text=Daun+Fresh" alt="Daun Pisang Fresh">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Daun Pisang Fresh</h4>
+                            <p>Daun pisang segar siap ekspor</p>
+                            <button class="view-full" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="products">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/ffffff?text=Kemasan+Premium" alt="Kemasan Premium">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Kemasan Premium</h4>
+                            <p>Kemasan berkualitas untuk ekspor internasional</p>
+                            <button class="view-full" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="products">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/ffffff?text=Produk+Jadi" alt="Produk Jadi">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Produk Siap Kirim</h4>
+                            <p>Produk final yang siap diekspor</p>
+                            <button class="view-full" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Processing Images -->
+                <div class="gallery-item" data-category="processing">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/ffffff?text=Seleksi+Daun" alt="Proses Seleksi">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Proses Seleksi</h4>
+                            <p>Pemilihan daun berkualitas terbaik</p>
+                            <button class="view-full" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="processing">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/ffffff?text=Quality+Control" alt="Quality Control">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Quality Control</h4>
+                            <p>Kontrol kualitas ketat sebelum ekspor</p>
+                            <button class="view-full" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="processing">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/ffffff?text=Loading+Truck" alt="Loading Proses">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <h4>Proses Loading</h4>
+                            <p>Pemuatan produk untuk pengiriman</p>
+                            <button class="view-full" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <div class="modal-info">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Green Leaf Export</h3>
+                    <p>Perusahaan eksportir daun pisang premium terpercaya dengan pengalaman bertahun-tahun melayani pasar internasional.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu Utama</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="products.html">Produk Kami</a></li>
+                        <li><a href="gallery.html">Galeri</a></li>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Ekspor Daun Pisang No. 123, Jakarta</li>
+                        <li><i class="fas fa-phone"></i> +62 21 1234 5678</li>
+                        <li><i class="fas fa-envelope"></i> info@greenleafexport.com</li>
+                        <li><i class="fas fa-globe"></i> www.greenleafexport.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Jam Operasional</h4>
+                    <ul>
+                        <li>Senin - Jumat: 08:00 - 17:00</li>
+                        <li>Sabtu: 08:00 - 12:00</li>
+                        <li>Minggu: Tutup</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Green Leaf Export. Semua hak cipta dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/6212345678" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
