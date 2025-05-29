@@ -5,11 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all functionality
     initNavigation();
     initScrollAnimations();
-    initContactForm();
     initGalleryFilter();
     initModal();
     initFloatingElements();
     initSmoothScrolling();
+
+    // Initialize contact form after a short delay to ensure EmailJS is loaded
+    setTimeout(initContactForm, 100);
 });
 
 // Navigation functionality
@@ -61,7 +63,7 @@ function initNavigation() {
 function updateActiveNavLink() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     navLinks.forEach(link => {
         link.classList.remove('active');
         const href = link.getAttribute('href');
@@ -74,7 +76,7 @@ function updateActiveNavLink() {
 // Scroll animations
 function initScrollAnimations() {
     const animatedElements = document.querySelectorAll('.benefit-card, .testimonial-card, .gallery-item, .product-card, .value-card, .team-card, .cert-card');
-    
+
     // Add animation classes
     animatedElements.forEach((element, index) => {
         element.classList.add('fade-in');
@@ -107,13 +109,13 @@ function initScrollAnimations() {
 
 function animateCounters() {
     const counters = document.querySelectorAll('.achievement-number');
-    
+
     counters.forEach(counter => {
         const target = parseInt(counter.textContent.replace(/\D/g, ''));
         const duration = 2000;
         const increment = target / (duration / 16);
         let current = 0;
-        
+
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -123,10 +125,10 @@ function animateCounters() {
                             current = target;
                             clearInterval(timer);
                         }
-                        
+
                         let displayValue = Math.floor(current);
                         const originalText = counter.textContent;
-                        
+
                         if (originalText.includes('+')) {
                             counter.textContent = displayValue + '+';
                         } else if (originalText.includes('%')) {
@@ -135,23 +137,28 @@ function animateCounters() {
                             counter.textContent = displayValue;
                         }
                     }, 16);
-                    
+
                     observer.unobserve(entry.target);
                 }
             });
         });
-        
+
         observer.observe(counter);
     });
 }
 
 // Contact form handling
 function initContactForm() {
-    // Initialize EmailJS
-    emailjs.init('VvPp2TK7CIDLm5QCt');
-    
+    // Initialize EmailJS with error handling
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init('VvPp2TK7CIDLm5QCt');
+    } else {
+        console.warn('EmailJS not loaded, contact form will not work');
+        return;
+    }
+
     const contactForms = document.querySelectorAll('#contactForm');
-    
+
     contactForms.forEach(form => {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -161,14 +168,20 @@ function initContactForm() {
 }
 
 function handleFormSubmission(form) {
+    // Check if EmailJS is available
+    if (typeof emailjs === 'undefined') {
+        showNotification('Service email tidak tersedia. Silakan coba lagi nanti.', 'error');
+        return;
+    }
+
     const submitBtn = form.querySelector('.submit-btn');
     const originalText = submitBtn.textContent;
-    
+
     // Show loading state
     submitBtn.textContent = 'Mengirim...';
     submitBtn.disabled = true;
     submitBtn.classList.add('loading');
-    
+
     // Get form data
     const formData = new FormData(form);
     const templateParams = {
@@ -180,31 +193,31 @@ function handleFormSubmission(form) {
         message: formData.get('message'),
         to_name: 'Green Leaf Export'
     };
-    
+
     // Send email using EmailJS
     emailjs.send('service_ui5x9bs', 'template_9vkv97e', templateParams)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
-            
+
             // Reset form
             form.reset();
-            
+
             // Reset button
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
             submitBtn.classList.remove('loading');
-            
+
             // Show success message
             showNotification('Pesan berhasil dikirim! Kami akan segera menghubungi Anda.', 'success');
-            
+
         }, function(error) {
             console.log('FAILED...', error);
-            
+
             // Reset button
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
             submitBtn.classList.remove('loading');
-            
+
             // Show error message
             showNotification('Gagal mengirim pesan. Silakan coba lagi.', 'error');
         });
@@ -228,14 +241,14 @@ function showNotification(message, type = 'info') {
         transition: transform 0.3s ease;
     `;
     notification.textContent = message;
-    
+
     document.body.appendChild(notification);
-    
+
     // Animate in
     setTimeout(() => {
         notification.style.transform = 'translateX(0)';
     }, 100);
-    
+
     // Remove after 5 seconds
     setTimeout(() => {
         notification.style.transform = 'translateX(100%)';
@@ -249,19 +262,19 @@ function showNotification(message, type = 'info') {
 function initGalleryFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
-    
+
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
             const filter = this.getAttribute('data-filter');
-            
+
             // Update active button
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            
+
             // Filter gallery items
             galleryItems.forEach(item => {
                 const category = item.getAttribute('data-category');
-                
+
                 if (filter === 'all' || category === filter) {
                     item.style.display = 'block';
                     setTimeout(() => {
@@ -287,9 +300,9 @@ function initModal() {
     const modalTitle = document.getElementById('modalTitle');
     const modalDescription = document.getElementById('modalDescription');
     const closeBtn = document.querySelector('.close');
-    
+
     if (!modal) return;
-    
+
     // Open modal when clicking view full button
     document.addEventListener('click', function(e) {
         if (e.target.closest('.view-full')) {
@@ -297,28 +310,28 @@ function initModal() {
             const img = galleryItem.querySelector('img');
             const title = galleryItem.querySelector('h4').textContent;
             const description = galleryItem.querySelector('p').textContent;
-            
+
             modalImg.src = img.src;
             modalImg.alt = img.alt;
             modalTitle.textContent = title;
             modalDescription.textContent = description;
-            
+
             modal.style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
     });
-    
+
     // Close modal
     if (closeBtn) {
         closeBtn.addEventListener('click', closeModal);
     }
-    
+
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             closeModal();
         }
     });
-    
+
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.style.display === 'block') {
             closeModal();
@@ -332,11 +345,11 @@ function openModal(element) {
     const img = galleryItem.querySelector('img');
     const title = galleryItem.querySelector('h4').textContent;
     const description = galleryItem.querySelector('p').textContent;
-    
+
     document.getElementById('modalImage').src = img.src;
     document.getElementById('modalTitle').textContent = title;
     document.getElementById('modalDescription').textContent = description;
-    
+
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
 }
@@ -350,24 +363,24 @@ function closeModal() {
 // Floating elements animation
 function initFloatingElements() {
     const floatingLeaves = document.querySelectorAll('.floating-leaf');
-    
+
     floatingLeaves.forEach((leaf, index) => {
         // Create banana leaf SVG background
         leaf.style.backgroundImage = `url("data:image/svg+xml,${encodeURIComponent(getBananaLeafSVG())}")`;
-        
+
         // Add random animation delays and directions
         leaf.style.animationDelay = `${index * 2}s`;
         leaf.style.animationDuration = `${6 + index}s`;
-        
+
         // Add mouse move parallax effect
         document.addEventListener('mousemove', function(e) {
             const x = (e.clientX / window.innerWidth) * 10;
             const y = (e.clientY / window.innerHeight) * 10;
-            
+
             leaf.style.transform = `translate(${x}px, ${y}px) rotate(${x * 0.5}deg)`;
         });
     });
-    
+
     // Create additional floating particles
     createFloatingParticles();
 }
@@ -405,7 +418,7 @@ function getBananaLeafSVG() {
 function createFloatingParticles() {
     const heroSection = document.querySelector('.hero');
     if (!heroSection) return;
-    
+
     for (let i = 0; i < 5; i++) {
         const particle = document.createElement('div');
         particle.className = 'floating-particle';
@@ -421,10 +434,10 @@ function createFloatingParticles() {
             left: ${Math.random() * 100}%;
             top: ${Math.random() * 100}%;
         `;
-        
+
         heroSection.appendChild(particle);
     }
-    
+
     // Add particle animation keyframes
     if (!document.querySelector('#particle-animation')) {
         const style = document.createElement('style');
@@ -459,10 +472,10 @@ function initSmoothScrolling() {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            
+
             if (target) {
                 const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-                
+
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -476,11 +489,11 @@ function initSmoothScrolling() {
 function initMap() {
     // Default location (Jakarta, Indonesia)
     const defaultLocation = { lat: -6.2088, lng: 106.8456 };
-    
+
     // Check if map container exists
     const mapContainer = document.getElementById('map');
     if (!mapContainer) return;
-    
+
     try {
         // Initialize map
         const map = new google.maps.Map(mapContainer, {
@@ -504,7 +517,7 @@ function initMap() {
                 }
             ]
         });
-        
+
         // Add marker
         const marker = new google.maps.Marker({
             position: defaultLocation,
@@ -521,7 +534,7 @@ function initMap() {
                 scaledSize: new google.maps.Size(40, 40)
             }
         });
-        
+
         // Add info window
         const infoWindow = new google.maps.InfoWindow({
             content: `
@@ -531,11 +544,11 @@ function initMap() {
                 </div>
             `
         });
-        
+
         marker.addListener('click', function() {
             infoWindow.open(map, marker);
         });
-        
+
     } catch (error) {
         console.error('Error initializing Google Maps:', error);
         mapContainer.innerHTML = `
@@ -579,7 +592,7 @@ function debounce(func, wait) {
 // Lazy loading for images
 function initLazyLoading() {
     const images = document.querySelectorAll('img[data-src]');
-    
+
     const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -590,7 +603,7 @@ function initLazyLoading() {
             }
         });
     });
-    
+
     images.forEach(img => imageObserver.observe(img));
 }
 
