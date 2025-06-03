@@ -170,7 +170,7 @@ function initContactForm() {
 function handleFormSubmission(form) {
     // Check if EmailJS is available
     if (typeof emailjs === 'undefined') {
-        showNotification('Service email tidak tersedia. Silakan coba lagi nanti.', 'error');
+        showNotification('Email service is unavailable. Please try again later.', 'error');
         return;
     }
 
@@ -208,7 +208,7 @@ function handleFormSubmission(form) {
             submitBtn.classList.remove('loading');
 
             // Show success message
-            showNotification('Pesan berhasil dikirim! Kami akan segera menghubungi Anda.', 'success');
+            showNotification('Message sent successfully! We will contact you soon.', 'success');
 
         }, function(error) {
             console.log('FAILED...', error);
@@ -219,7 +219,7 @@ function handleFormSubmission(form) {
             submitBtn.classList.remove('loading');
 
             // Show error message
-            showNotification('Gagal mengirim pesan. Silakan coba lagi.', 'error');
+            showNotification('Failed to send message. Please try again.', 'error');
         });
 }
 
