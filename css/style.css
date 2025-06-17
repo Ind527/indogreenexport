@@ -766,8 +766,8 @@ section {
 
 .cert-card {
     background: rgb(var(--white));
-    padding: 2rem;
-    border-radius: 5px;
+    padding: 1rem;
+    border-radius: 15px;
     text-align: center;
     box-shadow: var(--shadow);
     transition: var(--transition);
