@@ -767,7 +767,7 @@ section {
 .cert-card {
     background: rgb(var(--white));
     padding: 2rem;
-    border-radius: 15px;
+    border-radius: 5px;
     text-align: center;
     box-shadow: var(--shadow);
     transition: var(--transition);
@@ -795,7 +795,7 @@ section {
 
 .cert-card h4 {
     font-size: 1.3rem;
-    font-weight: 200;
+    font-weight: 600;
     margin-bottom: 1rem;
     color: rgb(var(--text-dark));
 }
