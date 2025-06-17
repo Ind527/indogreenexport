@@ -760,8 +760,9 @@ section {
 
 .cert-grid {
     display: grid;
-    grid-template-columns: repeat(3, 180px);
+    grid-template-columns: repeat(3, 300px);
     gap: 2rem;
+    justify-content: center;
 }
 
 .cert-card {
