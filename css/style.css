@@ -760,7 +760,7 @@ section {
 
 .cert-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
@@ -795,7 +795,7 @@ section {
 
 .cert-card h4 {
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 200;
     margin-bottom: 1rem;
     color: rgb(var(--text-dark));
 }
