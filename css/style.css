@@ -766,13 +766,11 @@ section {
 
 .cert-card {
     background: rgb(var(--white));
-    padding: 1rem; /* Diperkecil dari 2rem */
+    padding: 2rem;
     border-radius: 15px;
     text-align: center;
     box-shadow: var(--shadow);
     transition: var(--transition);
-    max-height: 250px; /* Batasi tinggi maksimal */
-    overflow: hidden;
 }
 
 .cert-card:hover {
@@ -787,7 +785,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 0.5rem; /* Diperkecil dari 1.5rem */
+    margin: 0 auto 1.5rem;
 }
 
 .cert-icon i {
@@ -796,9 +794,9 @@ section {
 }
 
 .cert-card h4 {
-    font-size: 1rem; /* Diperkecil dari 1.3rem */
+    font-size: 1.3rem;
     font-weight: 600;
-    margin-bottom: 0.5rem; /* Diperkecil dari 1rem */
+    margin-bottom: 1rem;
     color: rgb(var(--text-dark));
 }
 
@@ -808,10 +806,10 @@ section {
     gap: 0.5rem;
     background: rgb(var(--primary-green));
     color: rgb(var(--white));
-    padding: 6px 12px; /* Diperkecil dari 8px 16px */
+    padding: 8px 16px;
     border-radius: 25px;
     text-decoration: none;
-    font-size: 0.8rem; /* Diperkecil dari 0.9rem */
+    font-size: 0.9rem;
     font-weight: 500;
     margin-top: 1rem;
     transition: var(--transition);
