@@ -759,14 +759,12 @@ section {
 }
 
 .cert-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 340px);
-    gap: 2rem;
+    display: flex;
     justify-content: center;
-    margin: 0 auto;
 }
 
 .cert-card {
+    width: 180px;
     background: rgb(var(--white));
     padding: 2rem;
     border-radius: 15px;
@@ -774,6 +772,7 @@ section {
     box-shadow: var(--shadow);
     transition: var(--transition);
 }
+
 
 .cert-card:hover {
     transform: translateY(-5px);
