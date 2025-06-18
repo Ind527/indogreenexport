@@ -1000,7 +1000,6 @@ section {
     justify-content: center;
     flex-wrap: wrap;
 }
-
 /* Gallery Preview */
 .gallery-preview {
     background: #ffffff;
@@ -1008,9 +1007,10 @@ section {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* diubah dari 300px agar responsif & muat 3+ gambar */
     gap: 2rem;
     margin-bottom: 3rem;
+    justify-items: center; /* agar kotak gambar tetap rata tengah jika jumlahnya ganjil */
 }
 
 .gallery-item {
@@ -1099,7 +1099,7 @@ section {
 
 .gallery-section .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* juga disesuaikan agar tetap rapi */
     gap: 2rem;
 }
 
@@ -1206,6 +1206,7 @@ section {
 .close:hover {
     opacity: 0.7;
 }
+
 
 /* Testimonials */
 .testimonials {
