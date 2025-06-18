@@ -32,23 +32,6 @@ body {
     padding: 0 20px;
 }
 
-
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.site-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1;
-}
-
 /* Navigation Styles */
 .navbar {
     position: fixed;
@@ -1030,6 +1013,14 @@ section {
     margin-bottom: 3rem;
 }
 
+/* Perubahan: tambahkan min-height agar galeri tetap tinggi jika item kurang */
+.gallery-section .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
 .gallery-item {
     position: relative;
     border-radius: 15px;
@@ -1114,10 +1105,12 @@ section {
     background: rgb(var(--light-gray));
 }
 
+/* Tambahan perubahan agar layout tetap padat */
 .gallery-section .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .gallery-section .gallery-item {
