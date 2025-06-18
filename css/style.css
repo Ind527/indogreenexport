@@ -852,7 +852,7 @@ section {
 }
 
 .product-image img {
-    width: 400px;
+    width: 600px;
     height: 400px;
     object-fit: cover;
     transition: var(--transition);
