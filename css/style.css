@@ -142,7 +142,7 @@ body {
 .hero {
     position: relative;
     height: 100vh;
-    background: url('../attached_assets/daun\ pisang.jpg') center/cover no-repeat;
+    background: url('../attached_assets/turmeric-6638341_1280.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -874,10 +874,12 @@ section {
     transition: var(--transition);
 }
 
+/* ✅ Hilangkan efek hover image membesar */
 .product-card:hover .product-image img {
-    transform: scale(1.1);
+    transform: scale(1);
 }
 
+/* ✅ Hilangkan overlay hijau */
 .product-overlay {
     position: absolute;
     top: 0;
@@ -889,11 +891,12 @@ section {
     align-items: center;
     justify-content: center;
     opacity: 0;
+    pointer-events: none;
     transition: var(--transition);
 }
 
 .product-card:hover .product-overlay {
-    opacity: 1;
+    opacity: 0;
 }
 
 .view-btn {
