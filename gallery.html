@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Premium Turmeric Export </title>
-    <meta name="description" content="Galeri foto fasilitas produksi, kebun, dan produk daun pisang berkualitas premium">
+    <title>Gallery - Premium Agricultural Export </title>
+    <meta name="description" content="Galeri foto fasilitas produksi, kebun, dan produk kunyit serta daun pisang berkualitas premium">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
         <div class="floating-leaf leaf-2"></div>
         <div class="container">
             <h1>Our Gallery</h1>
-            <p>View our production facilities and quality of turmeric products</p>
+            <p>View our production facilities and quality of turmeric and banana leaf products</p>
         </div>
     </section>
 
@@ -59,6 +59,7 @@
                 <button class="filter-btn" data-filter="warehouse">Warehouse</button>
                 <button class="filter-btn" data-filter="plantation">Plantation</button>
                 <button class="filter-btn" data-filter="products">Processing</button>
+                <button class="filter-btn" data-filter="banana-leaf">Banana Leaf</button>
             </div>
         </div>
     </section>
@@ -187,6 +188,60 @@
         </div>
     </div>
 </div>
+
+<!-- Banana Leaf Images -->
+<div class="gallery-item" data-category="banana-leaf">
+    <img src="attached_assets/daun pisang.jpg" alt="Fresh Banana Leaf">
+    <div class="gallery-overlay">
+        <div class="overlay-content">
+            <h4>Fresh Banana Leaf</h4>
+            <p>Premium fresh banana leaves ready for food packaging applications.</p>
+            <button class="view-full" onclick="openModal(this)">
+                <i class="fas fa-expand"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="gallery-item" data-category="banana-leaf">
+    <img src="attached_assets/daun.webp" alt="Processed Banana Leaf">
+    <div class="gallery-overlay">
+        <div class="overlay-content">
+            <h4>Processed Banana Leaf</h4>
+            <p>Processed banana leaves for traditional and modern packaging needs.</p>
+            <button class="view-full" onclick="openModal(this)">
+                <i class="fas fa-expand"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="gallery-item" data-category="banana-leaf">
+    <img src="attached_assets/daunpisang.webp" alt="Dried Banana Leaf">
+    <div class="gallery-overlay">
+        <div class="overlay-content">
+            <h4>Dried Banana Leaf</h4>
+            <p>Dried banana leaves with extended shelf life for international shipping.</p>
+            <button class="view-full" onclick="openModal(this)">
+                <i class="fas fa-expand"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="gallery-item" data-category="banana-leaf">
+    <img src="attached_assets/pisang.jpeg" alt="Banana Plantation">
+    <div class="gallery-overlay">
+        <div class="overlay-content">
+            <h4>Banana Plantation</h4>
+            <p>Sustainable banana cultivation for premium leaf production.</p>
+            <button class="view-full" onclick="openModal(this)">
+                <i class="fas fa-expand"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
         </div> <!-- ✅ TUTUP gallery-grid -->
     </div> <!-- ✅ TUTUP container -->
 </section>
