@@ -1122,6 +1122,87 @@ section {
     gap: 2rem;
 }
 
+/* Desktop Gallery Layout - 4 Columns */
+@media (min-width: 1024px) {
+    .gallery-section .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .gallery-section .gallery-item {
+        height: 350px;
+    }
+    
+    .gallery-section .gallery-item img {
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Gallery Column Headers */
+    .gallery-section .gallery-grid::before {
+        content: '';
+        grid-column: 1 / -1;
+        height: 0;
+    }
+    
+    /* Column Labels for Desktop */
+    .gallery-section .gallery-grid .gallery-item:nth-child(1) {
+        position: relative;
+    }
+    
+    .gallery-section .gallery-grid .gallery-item:nth-child(1)::before {
+        content: 'Turmeric Plantation';
+        position: absolute;
+        top: -40px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-weight: 600;
+        color: rgb(var(--primary-green));
+        font-size: 1.1rem;
+        z-index: 10;
+    }
+    
+    .gallery-section .gallery-grid .gallery-item:nth-child(2)::before {
+        content: 'Banana Leaf Plantation';
+        position: absolute;
+        top: -40px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-weight: 600;
+        color: rgb(var(--primary-green));
+        font-size: 1.1rem;
+        z-index: 10;
+    }
+    
+    .gallery-section .gallery-grid .gallery-item:nth-child(3)::before {
+        content: 'Turmeric Warehouse';
+        position: absolute;
+        top: -40px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-weight: 600;
+        color: rgb(var(--primary-green));
+        font-size: 1.1rem;
+        z-index: 10;
+    }
+    
+    .gallery-section .gallery-grid .gallery-item:nth-child(4)::before {
+        content: 'Banana Leaf Warehouse';
+        position: absolute;
+        top: -40px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-weight: 600;
+        color: rgb(var(--primary-green));
+        font-size: 1.1rem;
+        z-index: 10;
+    }
+}
+
 .gallery-section .gallery-item {
     cursor: pointer;
 }
