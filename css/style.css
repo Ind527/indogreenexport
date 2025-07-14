@@ -1096,7 +1096,7 @@ section {
     right: 0;
     background: linear-gradient(transparent, rgba(0,0,0,0.8));
     color: rgb(var(--white));
-    padding: 2rem 1rem 1rem;
+    padding: 1.5rem 1rem 1rem;
     transform: translateY(100%);
     transition: var(--transition);
 }
@@ -1106,8 +1106,44 @@ section {
 }
 
 .gallery-overlay h4 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive gallery overlay adjustments */
+@media (max-width: 767px) {
+    .gallery-overlay {
+        padding: 1rem 0.75rem 0.75rem;
+    }
+    
+    .gallery-overlay h4 {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .gallery-overlay {
+        padding: 1.2rem 0.9rem 0.9rem;
+    }
+    
+    .gallery-overlay h4 {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery-overlay {
+        padding: 1.5rem 1rem 1rem;
+    }
+    
+    .gallery-overlay h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
 }
 
 .gallery-cta {
@@ -1311,18 +1347,25 @@ section {
     }
     
     .overlay-content h4 {
-        font-size: 1rem;
+        font-size: 0.9rem;
         margin-bottom: 0.3rem;
+        line-height: 1.2;
     }
     
     .overlay-content p {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         margin-bottom: 0.75rem;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
     
     .view-full {
-        padding: 6px 10px;
-        font-size: 0.9rem;
+        padding: 5px 8px;
+        font-size: 0.8rem;
+        border-radius: 50%;
     }
 }
 
@@ -1332,13 +1375,24 @@ section {
     }
     
     .overlay-content h4 {
-        font-size: 1.05rem;
+        font-size: 1rem;
         margin-bottom: 0.4rem;
+        line-height: 1.2;
     }
     
     .overlay-content p {
-        font-size: 0.82rem;
+        font-size: 0.8rem;
         margin-bottom: 0.9rem;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .view-full {
+        padding: 6px 10px;
+        font-size: 0.85rem;
     }
 }
 
@@ -1350,11 +1404,22 @@ section {
     .overlay-content h4 {
         font-size: 1.1rem;
         margin-bottom: 0.5rem;
+        line-height: 1.3;
     }
     
     .overlay-content p {
         font-size: 0.85rem;
         margin-bottom: 1rem;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .view-full {
+        padding: 8px 12px;
+        font-size: 0.9rem;
     }
 }
 
