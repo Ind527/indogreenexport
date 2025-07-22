@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Premium Turmeric Export </title>
-    <meta name="description" content="Galeri foto fasilitas produksi, kebun, dan produk daun pisang berkualitas premium">
+    <title>Gallery - Premium Agricultural Export </title>
+    <meta name="description" content="Galeri foto fasilitas produksi, kebun, dan produk kunyit serta daun pisang berkualitas premium">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
         <div class="floating-leaf leaf-2"></div>
         <div class="container">
             <h1>Our Gallery</h1>
-            <p>View our production facilities and quality of turmeric products</p>
+            <p>View our production facilities and quality of turmeric and banana leaf products</p>
         </div>
     </section>
 
@@ -58,7 +58,7 @@
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="warehouse">Warehouse</button>
                 <button class="filter-btn" data-filter="plantation">Plantation</button>
-                <button class="filter-btn" data-filter="products">Processing</button>
+                <button class="filter-btn" data-filter="products">Product</button>
             </div>
         </div>
     </section>
@@ -68,47 +68,7 @@
     <div class="container">
         <div class="gallery-grid" id="galleryGrid">
 
-            <!-- Warehouse Images -->
-            <div class="gallery-item" data-category="warehouse">
-                <img src="attached_assets/tumpukankunyit.jpeg" alt="Gudang Utama">
-                <div class="gallery-overlay">
-                    <div class="overlay-content">
-                        <h4>Turmeric Storage</h4>
-                        <p>Neatly stacked turmeric ready for processing.</p>
-                        <button class="view-full" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gallery-item" data-category="warehouse">
-                <img src="attached_assets/seleksi kunyit.jpg" alt="Area Packaging">
-                <div class="gallery-overlay">
-                    <div class="overlay-content">
-                        <h4>Clean Packing Facility</h4>
-                        <p>Fresh turmeric sorted and packaged hygienically.</p>
-                        <button class="view-full" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gallery-item" data-category="warehouse">
-                <img src="attached_assets/gudangkunyit.jpeg" alt="Cold Storage">
-                <div class="gallery-overlay">
-                    <div class="overlay-content">
-                        <h4>Post-Harvest Storage</h4>
-                        <p>Organized space for high-quality turmeric.</p>
-                        <button class="view-full" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Plantation Images -->
+            <!-- Column 1: Turmeric Plantation -->
             <div class="gallery-item" data-category="plantation">
                 <img src="attached_assets/kebunkunyit.jpeg" alt="Ladang Kunyit 1">
                 <div class="gallery-overlay">
@@ -122,6 +82,49 @@
                 </div>
             </div>
 
+            <!-- Column 2: Banana Leaf Plantation -->
+            <div class="gallery-item" data-category="plantation">
+                <img src="attached_assets/kebun.jpg" alt="Community Farming">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <h4>Green Banana Leaf Farm</h4>
+                        <p>Fresh, high-quality leaves from an eco-friendly farm.</p>
+                        <button class="view-full" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 3: Turmeric Warehouse -->
+            <div class="gallery-item" data-category="warehouse">
+                <img src="attached_assets/tumpukankunyit.jpeg" alt="Gudang Utama">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <h4>Turmeric Storage</h4>
+                        <p>Neatly stacked turmeric ready for processing.</p>
+                        <button class="view-full" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 4: Banana Leaf Warehouse -->
+            <div class="gallery-item" data-category="warehouse">
+                <img src="attached_assets/gudang1.jpg" alt="Banana Leaf Storage">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <h4>Banana Leaf Storage</h4>
+                        <p>Fresh banana leaves properly stored for export quality.</p>
+                        <button class="view-full" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Gallery Items -->
             <div class="gallery-item" data-category="plantation">
                 <img src="attached_assets/kebunkunyit1.jpeg" alt="Ladang Kunyit 2">
                 <div class="gallery-overlay">
@@ -139,8 +142,34 @@
                 <img src="attached_assets/kebunkunyit2.jpeg" alt="Petani Lokal">
                 <div class="gallery-overlay">
                     <div class="overlay-content">
-                        <h4>Community Farming</h4>
-                        <p>Empowering local farmers through turmeric trade.</p>
+                        <h4>Turmeric Garden</h4>
+                        <p>Natural golden rhizomes from sustainably grown fertile soil.</p>
+                        <button class="view-full" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="plantation">
+                <img src="attached_assets/kebun1.jpg" alt="Area Packaging">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <h4>Tropical Banana Leaf Farm</h4>
+                        <p>Healthy banana plants cultivated sustainably.</p>
+                        <button class="view-full" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="plantation">
+                <img src="attached_assets/kebun2.jpg" alt="Banana Plantation">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <h4>Banana Plantation</h4>
+                        <p>Sustainable banana cultivation for premium leaf production.</p>
                         <button class="view-full" onclick="openModal(this)">
                             <i class="fas fa-expand"></i>
                         </button>
@@ -187,6 +216,49 @@
         </div>
     </div>
 </div>
+
+<!-- Banana Leaf Images -->
+<div class="gallery-item" data-category="products">
+    <img src="attached_assets/daunpisang.webp" alt="Fresh Banana Leaf">
+    <div class="gallery-overlay">
+        <div class="overlay-content">
+            <h4>Fresh Banana Leaf</h4>
+            <p>Premium fresh banana leaves ready for food packaging applications.</p>
+            <button class="view-full" onclick="openModal(this)">
+                <i class="fas fa-expand"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="gallery-item" data-category="products">
+    <img src="attached_assets/bulat.jpeg" alt="Processed Banana Leaf">
+    <div class="gallery-overlay">
+        <div class="overlay-content">
+            <h4>Processed Banana Leaf</h4>
+            <p>Processed banana leaves for traditional and modern packaging needs.</p>
+            <button class="view-full" onclick="openModal(this)">
+                <i class="fas fa-expand"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="gallery-item" data-category="products">
+    <img src="attached_assets/kering.webp" alt="Dried Banana Leaf">
+    <div class="gallery-overlay">
+        <div class="overlay-content">
+            <h4>Dried Banana Leaf</h4>
+            <p>Dried banana leaves with extended shelf life for international shipping.</p>
+            <button class="view-full" onclick="openModal(this)">
+                <i class="fas fa-expand"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
         </div> <!-- ✅ TUTUP gallery-grid -->
     </div> <!-- ✅ TUTUP container -->
 </section>
@@ -208,7 +280,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>indogreen export</h3>
-                    <p>We are a growing premium turmeric exporter, with a strong commitment to quality and international customer satisfaction.</p>
+                    <p>We are a growing premium agricultural exporter, specializing in turmeric and banana leaf products, with a strong commitment to quality and international customer satisfaction.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/share/19XPMH7e1B/" class="social-link"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.instagram.com/indogreenexport?igsh=MXZkeHptajUzazluZw==" class="social-link"><i class="fab fa-instagram"></i></a>
