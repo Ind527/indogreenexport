@@ -1,4 +1,4 @@
-// Green Leaf Export - Main JavaScript File
+// PT. Indogreen Export Global - Main JavaScript File
 // Professional Banana Leaf Export Website
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -191,7 +191,7 @@ function handleFormSubmission(form) {
         company: formData.get('company'),
         product: formData.get('product'),
         message: formData.get('message'),
-        to_name: 'Green Leaf Export'
+        to_name: 'PT. Indogreen Export Global'
     };
 
     // Send email using EmailJS
@@ -522,7 +522,7 @@ function initMap() {
         const marker = new google.maps.Marker({
             position: defaultLocation,
             map: map,
-            title: 'Green Leaf Export',
+            title: 'PT. Indogreen Export Global',
             icon: {
                 url: `data:image/svg+xml,${encodeURIComponent(`
                     <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
@@ -539,7 +539,7 @@ function initMap() {
         const infoWindow = new google.maps.InfoWindow({
             content: `
                 <div style="padding: 10px; font-family: Poppins, sans-serif;">
-                    <h4 style="margin: 0 0 5px 0; color: #4CAF50;">Green Leaf Export</h4>
+                    <h4 style="margin: 0 0 5px 0; color: #4CAF50;">PT. Indogreen Export Global</h4>
                     <p style="margin: 0; font-size: 14px;">Jl. Ekspor Daun Pisang No. 123<br>Jakarta Selatan, Indonesia</p>
                 </div>
             `
